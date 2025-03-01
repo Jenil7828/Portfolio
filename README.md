@@ -25,12 +25,13 @@ This is a **Portfolio Website** built using **Django, HTML, and CSS**. It serves
 
 ---
 ## 📸 Screenshots  
-### 🌐 Home Page  
+
+### 🏠 Home Page
 ![Home Page](images/screenshots/Home.png)
 
-
-### 📄 Skills Page  
-![Skills Page](images/screenshots/skills.png)  
+### 🛠 Skills Page
+![Skills Page](images/screenshots/skills.png)
+ 
 
 ## 📂 Project Structure  
 
