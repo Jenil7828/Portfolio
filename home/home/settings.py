@@ -124,7 +124,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATIC_ROOT = path.join(BASE_DIR, "staticfiles")
 STATICFILES_DIRS = [
-    path.join(BASE_DIR, 'app/static'),
+    path.join(BASE_DIR, 'home/static'),
 ]
 
 
