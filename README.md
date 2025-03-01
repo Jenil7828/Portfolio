@@ -34,34 +34,8 @@ This is a **Portfolio Website** built using **Django, HTML, and CSS**. It serves
 
 ## 📂 Project Structure  
 
-Portfolio/ 
-  │── home/ │ 
-    ├── app/ │ 
-      │ ├── migrations/ │ │
-      ├── static/ │ │ 
-        │ ├── app/ │ │ 
-          │ │ ├── css/ │ │
-          │ │ ├── js/ │  
-      │ ├── templates/ │ │ 
-        │ ├── app/ │ │ 
-          │ │ ├── about.html │ │ │
-          │ ├── education.html │ │ 
-          │ │ ├── index.html │ │ │ 
-          │ ├── resume.html │ │ │ 
-          │ ├── skills.html │ │
-      ├── admin.py │ 
-      ├── apps.py │ 
-      ├── models.py │ 
-      ├── tests.py │ 
-      ├── views.py │ 
-    ├── home/ │ │
-      ├── asgi.py │ 
-      ├── settings.py │ 
-      ├── urls.py │ 
-      ├── wsgi.py │
-    ── db.sqlite3 
-    │── manage.py │
-    ── requirements.txt
+ 
+  Portfolio/ │── home/ │ ├── app/ │ │ ├── migrations/ │ │ ├── static/ │ │ │ ├── app/ │ │ │ │ ├── css/ │ │ │ │ ├── js/ │ │ ├── templates/ │ │ │ ├── app/ │ │ │ │ ├── about.html │ │ │ │ ├── education.html │ │ │ │ ├── index.html │ │ │ │ ├── resume.html │ │ │ │ ├── skills.html │ │ ├── admin.py │ │ ├── apps.py │ │ ├── models.py │ │ ├── tests.py │ │ ├── views.py │ ├── home/ │ │ ├── asgi.py │ │ ├── settings.py │ │ ├── urls.py │ │ ├── wsgi.py │── db.sqlite3 │── manage.py │── requirements.txt
 
 Create a Virtual Environment
   python -m venv venv  
