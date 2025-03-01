@@ -1,0 +1,163 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me - Jenil Girish Rathod</title>
+
+    <!-- Link to external stylesheet -->
+    <link rel="stylesheet" href="{% static 'app/css/styles.css' %}">
+    <script>
+        const darkModeToggle = document.getElementById('dark-mode');
+        darkModeToggle.addEventListener('change', () => {
+            document.body.classList.toggle('dark-mode', darkModeToggle.checked);
+            localStorage.setItem('darkMode', darkModeToggle.checked);
+        });
+    
+        // Keep mode persistent
+        if (localStorage.getItem('darkMode') === 'true') {
+            document.body.classList.add('dark-mode');
+            darkModeToggle.checked = true;
+        }
+    </script>
+    <style>
+                /* Reset and Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        
+
+        /* Dark Mode */
+        .dark-mode {
+            background-color: #121212;
+            color: #ffffff;
+        }
+
+        .dark-mode .edu-card {
+            background: #1e1e1e;
+            color: #fff;
+            box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+        }
+
+        /* Container */
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        
+        .dark-mode header {
+            background: #1e1e1e;
+        }
+
+        
+
+        
+
+        /* About Section */
+        .skill-section {
+            text-align: center;
+            min-height: 100vh;
+            margin-top: 100px;
+        }
+
+        /* Skills Section */
+        .education-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            max-width: 80%;
+            margin: auto;
+        }
+
+        /* Skill Card */
+        .edu-card {
+            background: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            padding: 20px;
+            width: 100%;
+            min-height: 250px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            text-align: center;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .edu-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .edu-card h3 a {
+            text-decoration: none;
+            color: #007bff;
+        }
+
+        .edu-card p {
+            color: #555;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .education-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .education-container {
+                grid-template-columns: repeat(1, 1fr);
+            }
+
+            .edu-card {
+                width: 90%;
+                margin: auto;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo"> <span>J</span> </div>
+        <nav>
+            <ul>
+                <li><a href="{% url 'main' %}">Home</a></li>
+                <li><a href="{% url 'about' %}">About</a></li>
+                <li><a href="{% url 'skills' %}">Technical Skills</a></li>
+                <li><a href="{% url 'education' %}">Education</a></li>
+            </ul>
+            <div class="toggle">
+                <input type="checkbox" id="dark-mode">
+                <label for="dark-mode"></label>
+            </div>
+        </nav>
+    </header>
+
+    <section class="skill-section">
+        <div class="container">
+            <div class="skill-content">
+                <h1>My Skills</h1>
+                <div class="education-container">
+                    {% for s in skills %} 
+                        <div class="edu-card">
+                            <h3><a href = "{{ s.link }}" >{{ s.name }}</a></h3>
+                            <p><strong>Description:</strong> {{ s.description }}</p>
+                            <p><strong>Level:</strong> {{ s.level }}</p>
+                        </div>
+                    {% empty %}
+                        <p>No education details available.</p>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>

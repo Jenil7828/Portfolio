@@ -1,0 +1,41 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Jenil Rathod - Portfolio</title>
+    <link rel="stylesheet" href="static/app/css/styles.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+        <div class="logo"> <span>J</span> </div>
+        <nav>
+            <ul>
+                <li><a href="{% url 'main' %}">Home</a></li>
+                <li><a href="{% url 'about' %}">About</a></li>
+                <li><a href="{% url 'skills' %}">Technical Skills</a></li>
+                <li><a href="{% url 'education' %}">Education</a></li>
+            </ul>
+            <div class="toggle">
+                <input type="checkbox" id="dark-mode">
+                <label for="dark-mode"></label>
+            </div>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="content">
+            <h2>Hi There! <span class="wave">👋</span> I'M</h2>
+            <h1>{{details.name}}</h1>
+            <h3><span class="role"></span></h3>
+        </div>
+        <div class="image">
+            <img src="{% static 'app/images/developer.png' %}" alt="Developer Illustration">
+        </div>
+    </section>
+
+    <script src="static/js/script.js"></script>
+</body>
+</html>
